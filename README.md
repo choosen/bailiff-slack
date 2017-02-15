@@ -1,24 +1,22 @@
-# README
+# :cop: Bailiff-slack [![Build Status](https://travis-ci.org/choosen/bailiff-slack.svg?branch=master)](https://travis-ci.org/choosen/bailiff-slack)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :moneybag: This application is to settle up expenses using Slack command line integration
 
-Things you may want to cover:
+### :hash: Ruby version
+- 2.3.3
 
-* Ruby version
+### :book: System dependencies
+- Rails 5.0.1
+- PostgreSQL 9.6
+- Sidekiq
 
-* System dependencies
+### :smile: How to run
+1. clone repository
+2. `cd path/to/repo`
+3. `cp config/database.yml.sample config/database.yml`
+4. set properly `config/database.yml`
+5. `rake db:create db:migrate`
+6. Set your slack token in system variable `SLACK_SLASH_COMMAND_TOKEN`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### :white_check_mark: tests
+* Run tests with `bundle exec rspec`

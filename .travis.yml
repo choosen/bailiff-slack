@@ -9,7 +9,10 @@ script:
 - bundle exec sidekiq -d -L /tmp/sidekiq.log
 - sleep 1
 - psql -c 'create database squashapp_test;' -U postgres
+- cp config/database.yml.sample config/database.yml
 - bundle exec rake db:test:prepare
+- bundle exec rake factory_girl:lint
+- bundle exec rake spec
 services:
 - postgresql
 - redis-server
@@ -19,3 +22,6 @@ group: stable
 dist: trusty
 os: linux
 sudo: required
+notifications:
+  slack:
+    secure: 35FgHyQPxS7gyee5TYSPKveiSp2kL1UgwOUcYCoQ1ThUCzB+S8Tb1r37qbJxBPnKD/mvCrYvd2Gosj4DZaHUdtECBdfd68X/awXDHfYFNuPT5+jHLgUcEQherbmJojdRoqaJlJ6MX4tfGs5aACrDnNnyci3+6o6OzqVqdzdvZZGux11D+Cbg+nBDTR5UVxdGGuQw/SDyMpbsY14hAaLrRNheWghbmCGByQaWRfkSbXMDOdy9D12kJ2NvM6HmP6qykTDgMohhTVVXBbuylOxKmUucRakYUPvOUZpSnq1R9ddPb8QQR9lDsmwQIgiobdeROH5KQa457sOWhakIk+55gPyAwptvSQl7fJm4tBlMM/M1vEud/uINfSOeRCqrN9g3OQ+OIoaw1XWL30L+HeCsl8jsWpX2O14/uMSXfFxS8qkXNO7sge4Z2vDOfwu46WeTYKQoRJ3pcsb/1pCAgJ4/6Vx92wlRbjOIFVlI5RQEq66ImknuQdWXpRooo31YNcnQ9KDeC893a1O3FjGh3uLS/nWphvh62vSRN+lOmkXTmH691hKNFEn5celK3fynXOIxAIVqhbjZ6UKOFjAdSzD8JOthbloqYd6aGlF7SzYZpjRlI99JivLpTL+nSC1DxGiVEp3Aq9mEbtWYJTV4SHDfd9HXKb0OGT+493V2/buVEhk=
