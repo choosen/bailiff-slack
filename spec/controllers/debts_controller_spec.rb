@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DebtsController, type: :controller do
-  let(:valid_attributes) {
-    skip('Add a hash of attributes valid for your model')
-  }
+  let(:valid_attributes) { skip('Add a hash of attributes valid') }
 
   let(:invalid_attributes) { skip('Add a hash of attributes invalid') }
 
