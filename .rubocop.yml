@@ -1,0 +1,42 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - bin/*
+    - config/**/*
+    - coverage/**/*
+    - db/**/*
+    - doc/**/*
+    - log/**/*
+    - public/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Exclude:
+    - app/api/**/*
+    - app/controllers/**/*
+    - app/helpers/**/*
+
+ClassAndModuleChildren:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Rails:
+  Enabled: true
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
