@@ -19,6 +19,7 @@ gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'pry-nav'
