@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :debt do
-    amount 15.00
+  factory :payment do
+    amount 9.99
     debtor
     creditor
   end

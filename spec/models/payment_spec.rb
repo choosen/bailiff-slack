@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Debt, type: :model do
+RSpec.describe Payment, type: :model do
   it { is_expected.to belong_to :creditor }
   it { is_expected.to belong_to :debtor }
 
