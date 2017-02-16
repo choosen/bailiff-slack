@@ -7,14 +7,8 @@ development:
   <<: *default
   database: bailiff_development
   user: user
-  password: qwerty
+  password:
 
 test:
   <<: *default
   database: bailiff_test
-
-production:
-  <<: *default
-  database: bailiff_production
-  username: bailiff
-  password: <%= ENV['BAILIFF_DATABASE_PASSWORD'] %>
